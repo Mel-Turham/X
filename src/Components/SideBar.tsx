@@ -13,14 +13,14 @@ import { useDisclosure } from '@nextui-org/react';
 import { FaFeatherPointed } from 'react-icons/fa6';
 const Links = [
 	{
-		path: '/',
+		path: '.',
 		label: 'Home',
 		icon: <AiFillHome className='w-6 h-6' />,
 	},
 	{
 		path: 'explore',
 		label: 'Explore',
-		icon: <FaHashtag className='w-6 h-6' />,
+		icon: <FaHashtag className='w-7 h-7' />,
 	},
 	{
 		path: 'notifications',
@@ -67,8 +67,8 @@ const SideBar = () => {
 
 	return (
 		<>
-			<nav className='col-start-1 col-end-3 pt-4 mr-4 flex flex-col'>
-				<Twitter className='w-[30px] h-[30px] self-center mb-6' />
+			<nav className='col-start-1 col-end-2 pt-4 mr-4 flex flex-col items-end'>
+				<Twitter className='w-[40px] h-[40px] mb-6' />
 				<ul className='flex flex-col items-center gap-3 mb-2'>
 					{Links.map((link) => {
 						return (
@@ -90,15 +90,21 @@ const SideBar = () => {
 										{link.icon}
 									</Button>
 									{hoveredItem === link.path && (
-										<Button color='primary' size='sm' className='absolute  font-semibold right-[52px] top-[50%] translate-y-[-50%] p-2 text-[12px] rounded-lg'>
-											{link.label}
+										<Button
+											color='primary'
+											size='sm'
+											className='absolute  font-semibold right-[51px] top-[50%] w-fit translate-y-[-50%] p-2 text-[12px] rounded-lg'
+										>
+											{link.label.length > 10
+												? link.label.slice(0, 8) + '...'
+												: link.label}
 										</Button>
 									)}
 								</NavLink>
 							</li>
 						);
 					})}
-					<Tooltip placement='left' content='New post'>
+					<Tooltip placement='left' content='New post' color='primary'>
 						<Button
 							onPress={onOpen}
 							color='primary'
