@@ -27,6 +27,7 @@ interface ModalProps {
 }
 const ModalComponent = ({ onClose, isOpen, onOpenChange }: ModalProps) => {
 	const [value, setValue] = useState('');
+
 	return (
 		<Modal
 			onClose={onClose}
@@ -77,6 +78,7 @@ const ModalComponent = ({ onClose, isOpen, onOpenChange }: ModalProps) => {
 					</ModalHeader>
 					<ModalBody>
 						<Input
+							autoFocus
 							type='text'
 							color='primary'
 							size='lg'
