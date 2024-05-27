@@ -9,6 +9,8 @@ import { Button, User } from '@nextui-org/react';
 import { useState } from 'react';
 import Logo from '../../src/assets/svg/Logo.svg';
 import { TfiMore } from 'react-icons/tfi';
+import ModalComponent from '../Components/Modal';
+import { useDisclosure } from '@nextui-org/react';
 const Links = [
 	{
 		path: '/',
@@ -53,6 +55,7 @@ const Links = [
 ];
 const SideBar = () => {
 	const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+	const { isOpen, onClose, onOpenChange, onOpen } = useDisclosure();
 
 	const handleMouseInter = (itemPath: string) => {
 		// console.log(itemPath);
@@ -64,7 +67,7 @@ const SideBar = () => {
 
 	return (
 		<>
-			<nav className='col-start-1 col-end-4 pt-4 mr-4 flex flex-col'>
+			<nav className='col-start-1 col-end-3 pt-4 mr-4 flex flex-col'>
 				<Twitter className='w-[30px] h-[30px] self-center mb-6' />
 				<ul className='flex flex-col items-center gap-3 mb-2'>
 					{Links.map((link) => {
@@ -79,13 +82,13 @@ const SideBar = () => {
 									to={link.path}
 									className={({ isActive }) =>
 										isActive
-											? ' h-[40px] w-[40px]  bg-blue-400 grid place-content-center rounded-full transition-all ease-in-out'
-											: ' h-[40px] w-[40px]  hover:bg-zinc-500 grid place-content-center rounded-full transition-all ease-in-out'
+											? ' h-[40px] w-[40px]  bg-blue-800 grid place-content-center rounded-full transition-all ease-in-out'
+											: ' h-[40px] w-[40px]  hover:bg-zinc-300 grid place-content-center rounded-full transition-all ease-in-out'
 									}
 								>
-									<i>{link.icon}</i>
+									<i >{link.icon}</i>
 									{hoveredItem === link.path && (
-										<span className='absolute font-semibold right-[52px] top-[50%] translate-y-[-50%] bg-slate-400 p-2 text-[12px] rounded-sm'>
+										<span className='absolute text-white bg-black font-semibold right-[52px] top-[50%] translate-y-[-50%] p-2 text-[12px] rounded-sm'>
 											{link.label}
 										</span>
 									)}
@@ -94,6 +97,7 @@ const SideBar = () => {
 						);
 					})}
 					<Button
+						onPress={onOpen}
 						color='primary'
 						size='sm'
 						variant='solid'
@@ -104,7 +108,7 @@ const SideBar = () => {
 					</Button>
 				</ul>
 
-				<div className='flex items-center justify-between mt-11 max-h-fit py-2 px-3 rounded-md bg-[#28282d3f]'>
+				<div className='flex items-center justify-between mt-11 max-h-fit py-2 px-3 rounded-md'>
 					<User
 						name='William'
 						description={<Link to='/profile'>@William</Link>}
@@ -116,9 +120,17 @@ const SideBar = () => {
 							size: 'sm',
 						}}
 					/>
-					<TfiMore className='text-white w-6 h-6 cursor-pointer' />
+					<TfiMore
+						className='w-6 h-6 cursor-pointer'
+						onClick={() => alert('Clicked')}
+					/>
 				</div>
 			</nav>
+			<ModalComponent
+				isOpen={isOpen}
+				onClose={onClose}
+				onOpenChange={onOpenChange}
+			/>
 		</>
 	);
 };
