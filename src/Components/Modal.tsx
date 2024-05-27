@@ -78,8 +78,9 @@ const ModalComponent = ({ onClose, isOpen, onOpenChange }: ModalProps) => {
 					<ModalBody>
 						<Input
 							type='text'
-							className='text-[1.8rem] text-white'
-							label='Message'
+							color='primary'
+							size='lg'
+							fullWidth={false}
 							variant='underlined'
 							placeholder='What is happening?!'
 							value={value}
