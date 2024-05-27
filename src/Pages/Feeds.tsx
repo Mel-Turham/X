@@ -1,16 +1,18 @@
 import { Avatar, Button, Input, Tooltip } from '@nextui-org/react';
-import { BsStars } from 'react-icons/bs';
+
 import { FaImage, FaPoll, FaSmile } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 import { MdOutlineGifBox } from 'react-icons/md';
 import { RiCalendarScheduleFill } from 'react-icons/ri';
 import { useValue } from '../Contexts/contextInput';
+import CardPost from '../Components/CardPost';
+import { BsStars } from 'react-icons/bs';
 const Feeds = () => {
 	const { value, setValue } = useValue();
 	return (
 		<section className='h-full'>
 			<div className='flex flex-col gap-3'>
-				<div className='flex items-center justify-between pb-3 px-5'>
+				<div className='flex items-center justify-between py-1 px-5  w-full bg-white'>
 					<h2 className='font-bold text-[1.4rem]'>Home</h2>
 					<BsStars className='w-6 h-6 text-blue-600' />
 				</div>
@@ -58,24 +60,27 @@ const Feeds = () => {
 							</Button>
 						</Tooltip>
 						<Tooltip content='localization' placement='bottom'>
-							<Button
-								isIconOnly
-								color='primary'
-								
-								variant='light'
-							>
+							<Button isIconOnly color='primary' variant='light'>
 								<FaLocationDot className='w-5 h-5' />
 							</Button>
 						</Tooltip>
 					</div>
 
 					<div>
-						<Button isDisabled={value ? false : true} color='primary' className='font-semibold'>
+						<Button
+							isDisabled={value ? false : true}
+							color='primary'
+							className='font-semibold'
+						>
 							Post
 						</Button>
 					</div>
 				</div>
 			</div>
+
+			<article className='px-6 mt-2'>
+					<CardPost />
+			</article>
 		</section>
 	);
 };

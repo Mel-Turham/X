@@ -67,7 +67,7 @@ const SideBar = () => {
 
 	return (
 		<>
-			<nav className='col-start-1 col-end-2 pt-4 mr-4 flex flex-col items-end'>
+			<nav className=' h-screen col-start-1 col-end-2 pt-4 mr-4 flex flex-col items-end sticky top-0'>
 				<Twitter className='w-[40px] h-[40px] mb-6' />
 				<ul className='flex flex-col items-center gap-3 mb-2'>
 					{Links.map((link) => {
