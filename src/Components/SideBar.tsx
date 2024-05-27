@@ -4,13 +4,13 @@ import { NavLink, Link } from 'react-router-dom';
 import { FaHashtag, FaBookmark, FaListAlt, FaUser } from 'react-icons/fa';
 import { IoMdNotifications } from 'react-icons/io';
 import { MdMessage, MdMoreHoriz } from 'react-icons/md';
-import { HiPencilAlt } from 'react-icons/hi';
-import { Button, User } from '@nextui-org/react';
+import { Button, Tooltip, User } from '@nextui-org/react';
 import { useState } from 'react';
 import Logo from '../../src/assets/svg/Logo.svg';
-import { TfiMore } from 'react-icons/tfi';
+
 import ModalComponent from '../Components/Modal';
 import { useDisclosure } from '@nextui-org/react';
+import { FaFeatherPointed } from 'react-icons/fa6';
 const Links = [
 	{
 		path: '/',
@@ -82,47 +82,46 @@ const SideBar = () => {
 									to={link.path}
 									className={({ isActive }) =>
 										isActive
-											? ' h-[40px] w-[40px]  bg-blue-800 grid place-content-center rounded-full transition-all ease-in-out'
-											: ' h-[40px] w-[40px]  hover:bg-zinc-300 grid place-content-center rounded-full transition-all ease-in-out'
+											? ' h-[40px] w-[40px] bg-[#CCE2FC] hover:!bg-transparent  grid place-content-center  rounded-lg'
+											: ' h-[40px] w-[40px]  grid place-content-center rounded-md transition-all ease-in-out'
 									}
 								>
-									<i >{link.icon}</i>
+									<Button isIconOnly color='primary' variant='light'>
+										{link.icon}
+									</Button>
 									{hoveredItem === link.path && (
-										<span className='absolute text-white bg-black font-semibold right-[52px] top-[50%] translate-y-[-50%] p-2 text-[12px] rounded-sm'>
+										<Button color='primary' size='sm' className='absolute  font-semibold right-[52px] top-[50%] translate-y-[-50%] p-2 text-[12px] rounded-lg'>
 											{link.label}
-										</span>
+										</Button>
 									)}
 								</NavLink>
 							</li>
 						);
 					})}
-					<Button
-						onPress={onOpen}
-						color='primary'
-						size='sm'
-						variant='solid'
-						endContent={<HiPencilAlt className='w-5 h-5' />}
-						className='rounded-full w-fit mx-auto capitalize text-[14px] font-semibold'
-					>
-						new post
-					</Button>
+					<Tooltip placement='left' content='New post'>
+						<Button
+							onPress={onOpen}
+							color='primary'
+							size='lg'
+							variant='solid'
+							radius='full'
+							isIconOnly
+						>
+							<FaFeatherPointed />
+						</Button>
+					</Tooltip>
 				</ul>
 
-				<div className='flex items-center justify-between mt-11 max-h-fit py-2 px-3 rounded-md'>
+				<div className='flex items-center justify-center mt-6 max-h-fit py-2 px-3 rounded-md'>
 					<User
 						name='William'
 						description={<Link to='/profile'>@William</Link>}
 						className='items-start'
 						avatarProps={{
 							src: Logo,
-							isBordered: true,
 							color: 'primary',
 							size: 'sm',
 						}}
-					/>
-					<TfiMore
-						className='w-6 h-6 cursor-pointer'
-						onClick={() => alert('Clicked')}
 					/>
 				</div>
 			</nav>
