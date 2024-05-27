@@ -4,9 +4,9 @@ import SideBar from '../Components/SideBar';
 
 const LayoutHome = () => {
 	return (
-		<main className='grid  grid-cols-12 dark   min-h-screen  px-[3rem] divide-x divide-gray-600'>
+		<main className='grid grid-cols-12 min-h-screen  px-[5rem] divide-x divide-gray-300'>
 			<SideBar />
-			<section className='px-4'>
+			<section className='w-full col-start-2 col-end-9 pt-3'>
 				<Outlet />
 			</section>
 			<RightBar />
