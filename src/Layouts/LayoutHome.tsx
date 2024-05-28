@@ -1,18 +1,17 @@
 import { Outlet } from 'react-router-dom';
 import RightBar from '../Components/RightBar';
 import SideBar from '../Components/SideBar';
-
-
+import Navbar from '../Components/Navbar';
 const LayoutHome = () => {
 	return (
-		<main className='grid grid-cols-12 min-h-screen  px-[5rem] divide-x divide-gray-300'>
+		<div className='flex h-screen w-full overflow-hidden '>
 			<SideBar />
-			<section className='w-full col-start-2 col-end-9 pt-3 h-full overflow-y-scroll relative no-scrollbar'>
-				
+			<section className='h-screen w-[50%] overflow-y-scroll no-scrollbar'>
+				<Navbar />
 				<Outlet />
 			</section>
 			<RightBar />
-		</main>
+		</div>
 	);
 };
 export default LayoutHome;
