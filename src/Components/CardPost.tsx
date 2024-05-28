@@ -14,7 +14,7 @@ import { MdSaveAlt } from 'react-icons/md';
 
 const CardPost = () => {
 	return (
-		<Card className='py-1' shadow='none'>
+		<Card className='py-0' shadow='none' radius='none'>
 			<CardHeader className='pb-0 pt-1 px-4 flex-col items-start '>
 				<div className='flex items-center gap-3'>
 					<Avatar size='md' />
