@@ -1,12 +1,12 @@
 import Twitter from '../icons/Twitter';
 import { AiFillHome } from 'react-icons/ai';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaHashtag, FaBookmark, FaListAlt, FaUser } from 'react-icons/fa';
 import { IoMdNotifications } from 'react-icons/io';
 import { MdMessage, MdMoreHoriz } from 'react-icons/md';
-import { Button, Tooltip, User } from '@nextui-org/react';
+import { Button, Tooltip } from '@nextui-org/react';
 import { useState } from 'react';
-import Logo from '../../src/assets/svg/Logo.svg';
+// import Logo from '../../src/assets/svg/Logo.svg';
 
 import ModalComponent from '../Components/Modal';
 import { useDisclosure } from '@nextui-org/react';
@@ -67,9 +67,9 @@ const SideBar = () => {
 
 	return (
 		<>
-			<nav className=' h-screen col-start-1 col-end-2 pt-4 mr-4 flex flex-col items-end sticky top-0'>
-				<Twitter className='w-[40px] h-[40px] mb-6' />
-				<ul className='flex flex-col items-center gap-3 mb-2'>
+			<nav className=' border-r  w-[20%]  flex flex-col items-end sticky  top-0 pt-4'>
+				<ul className='flex flex-col items-center gap-3 mr-2'>
+					<Twitter className='w-[40px] h-[40px]' />
 					{Links.map((link) => {
 						return (
 							<li
@@ -117,19 +117,7 @@ const SideBar = () => {
 						</Button>
 					</Tooltip>
 				</ul>
-
-				<div className='flex items-center justify-center mt-6 max-h-fit py-2 px-3 rounded-md'>
-					<User
-						name='William'
-						description={<Link to='/profile'>@William</Link>}
-						className='items-start'
-						avatarProps={{
-							src: Logo,
-							color: 'primary',
-							size: 'sm',
-						}}
-					/>
-				</div>
+				{/* use image there */}
 			</nav>
 			<ModalComponent
 				isOpen={isOpen}
