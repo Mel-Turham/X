@@ -6,6 +6,7 @@ import {
 	CardFooter,
 	CardHeader,
 	Image,
+	Tooltip,
 } from '@nextui-org/react';
 import { FaRegComment } from 'react-icons/fa';
 import { AiOutlineRetweet } from 'react-icons/ai';
@@ -14,75 +15,111 @@ import { MdSaveAlt } from 'react-icons/md';
 
 const CardPost = () => {
 	return (
-		<Card className='py-0' shadow='none' radius='none'>
-			<CardHeader className='pb-0 pt-1 px-4 flex-col items-start '>
-				<div className='flex items-center gap-3'>
-					<Avatar size='md' />
-					<div className=''>
-						<div className='flex items-center gap-3'>
-							<h2 className='font-bold text-medium'>
-								Devon lame
-								<span className='opacity-40 ml-1 font-light'>@johndue</span>
-							</h2>
-							&bull;
-							<span className='font-light italic'>2w</span>
-						</div>
-						<h3 className=' font-medium text-[15px]'>Tom is the big hurry</h3>
+		<div className='flex gap-2'>
+			<div>
+				<Avatar className='mt-4' size='md' />
+			</div>
+			<Card shadow='none' radius='none'>
+				<CardHeader className='flex gap-1 flex-col items-start'>
+					<div className='flex items-center gap-1'>
+						<h3 className='text-[1rem] font-semibold'>
+							William
+							<span className='font-normal text-default-400'> @william</span>
+						</h3>
+						&bull; <span className='text-default-400'>2s</span>
 					</div>
-				</div>
-			</CardHeader>
-			<CardBody className='overflow-visible mt-1'>
-				<Image
-					src='../../src/assets/images/posts/post_image-1.png'
-					className='object-cover'
-				/>
-			</CardBody>
-			<CardFooter className='px-4'>
-				<div className='flex'>
-        <Button
-					variant='light'
-					size='md'
-					color='success'
-					radius='full'
-					startContent={<FaRegComment className='w-4 h-4' />}
-					className='flex items-center text-gray-600'
-				>
-					<span className='text-gray-600 font-semibold'>5k</span>
-				</Button>
-				<Button
-					variant='light'
-					size='md'
-					color='primary'
-					radius='full'
-					startContent={<AiOutlineRetweet className='w-4 h-4' />}
-					className='flex items-center text-gray-600'
-				>
-					<span className='text-gray-600 font-semibold'>59</span>
-				</Button>
-				<Button
-					variant='light'
-					size='md'
-					color='danger'
-					radius='full'
-					startContent={<IoIosHeartEmpty className='w-4 h-4' />}
-					className='flex items-center text-gray-600'
-				>
-					<span className='text-gray-600 font-semibold'>10k</span>
-				</Button>
-				<Button
-					variant='light'
-					size='md'
-					color='warning'
-					radius='full'
-					startContent={<MdSaveAlt className='w-4 h-4' />}
-					className='flex items-center text-gray-600'
-				>
-					<span className='text-gray-600 font-semibold'>5</span>
-				</Button>
-        </div>
-			</CardFooter>
-      <p></p>
-		</Card>
+					<p className='text-[13px] line-clamp-2'>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel impedit
+						reprehenderit commodi quaerat consectetur labore deleniti deserunt
+						molestias animi magnam ullam consequuntur hic, similique maxime
+						odit! Deserunt illo optio provident.
+					</p>
+				</CardHeader>
+				<CardBody className=' -mt-1'>
+					<Image className='object-cover w-full' src='../../src/assets/images/posts/post_image-1.png' />
+				</CardBody>
+				<CardFooter className='py-0 w-[400px] justify-between'>
+					<div className='flex flex-col items-center'>
+						<Tooltip
+							content='Comments'
+							color='primary'
+							size='sm'
+							placement='top-end'
+						>
+							<Button
+								onClick={() => alert('Clicked')}
+								size='sm'
+								isIconOnly={true}
+								radius='full'
+								color='primary'
+								variant='light'
+							>
+								<FaRegComment className='w-5 h-5' />
+							</Button>
+						</Tooltip>
+						<span className='text-[13.5px] font-semibold text-default-500'>
+							20k
+						</span>
+					</div>
+					<div className='flex flex-col items-center'>
+						<Tooltip
+							content='Retweets'
+							color='success'
+							size='sm'
+							placement='top'
+						>
+							<Button
+								onClick={() => alert('Clicked')}
+								size='sm'
+								isIconOnly={true}
+								radius='full'
+								color='success'
+								variant='light'
+							>
+								<AiOutlineRetweet className='w-5 h-5' />
+							</Button>
+						</Tooltip>
+						<span className='text-[13.5px] font-semibold text-default-500'>
+							300
+						</span>
+					</div>
+					<div className='flex flex-col items-center'>
+						<Tooltip content='Likes' color='danger' size='sm' placement='top'>
+							<Button
+								onClick={() => alert('Clicked')}
+								size='sm'
+								isIconOnly={true}
+								radius='full'
+								color='danger'
+								variant='light'
+							>
+								<IoIosHeartEmpty className='w-5 h-5' />
+							</Button>
+						</Tooltip>
+						<span className='text-[13.5px] font-semibold text-default-500'>
+							60.6k
+						</span>
+					</div>
+					<div className='flex flex-col items-center'>
+						<Tooltip content='Saves' color='warning' size='sm' placement='top'>
+							<Button
+								onClick={() => alert('Clicked')}
+								size='sm'
+								isIconOnly={true}
+								radius='full'
+								color='warning'
+								variant='light'
+							>
+								<MdSaveAlt className='w-5 h-5' />
+							</Button>
+						</Tooltip>
+						<span className='text-[13.5px] font-semibold text-default-500'>
+							2.4k
+						</span>
+					</div>
+				</CardFooter>
+			</Card>
+		</div>
 	);
 };
 export default CardPost;
