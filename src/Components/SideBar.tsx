@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { FaHashtag, FaBookmark, FaListAlt, FaUser } from 'react-icons/fa';
 import { IoMdNotifications } from 'react-icons/io';
 import { MdMessage, MdMoreHoriz } from 'react-icons/md';
-import { Button, Tooltip } from '@nextui-org/react';
+import { Avatar, Button, Tooltip} from '@nextui-org/react';
 import { useState } from 'react';
 // import Logo from '../../src/assets/svg/Logo.svg';
 
@@ -67,8 +67,8 @@ const SideBar = () => {
 
 	return (
 		<>
-			<nav className=' border-r  w-[20%]  flex flex-col items-end sticky  top-0 pt-4'>
-				<ul className='flex flex-col items-center gap-3 mr-2'>
+			<aside className=' border-r  w-[10%]  flex flex-col items-center justify-between sticky  top-0 py-4'>
+				<menu className='flex flex-col items-center gap-3'>
 					<Twitter className='w-[40px] h-[40px]' />
 					{Links.map((link) => {
 						return (
@@ -116,9 +116,9 @@ const SideBar = () => {
 							<FaFeatherPointed />
 						</Button>
 					</Tooltip>
-				</ul>
-				{/* use image there */}
-			</nav>
+				</menu>
+       <Avatar src='../../src/assets/images/users/profile_1.png'/>
+			</aside>
 			<ModalComponent
 				isOpen={isOpen}
 				onClose={onClose}

@@ -1,10 +1,4 @@
-import {
-	Avatar,
-	Button,
-	Input,
-	Tooltip,
-
-} from '@nextui-org/react';
+import { Avatar, Button, Input, Tooltip } from '@nextui-org/react';
 
 import { FaImage, FaPoll, FaSmile } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
@@ -15,8 +9,9 @@ import CardPost from '../Components/CardPost';
 
 const Feeds = () => {
 	const { value, setValue } = useValue();
+
 	return (
-		<section className='overflow-y-scroll no-scrollbar'>
+		<section className=''>
 			<div className=''>
 				<div className='flex flex-col gap-3'>
 					<div className='p-5 flex items-center gap-2 border-t border-b '>
@@ -81,6 +76,66 @@ const Feeds = () => {
 					</div>
 				</div>
 				<article className='px-6 mt-2 divide-y-1 flex flex-col gap-2'>
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
+					<CardPost />
 					<CardPost />
 					<CardPost />
 					<CardPost />
