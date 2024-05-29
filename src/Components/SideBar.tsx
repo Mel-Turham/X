@@ -67,7 +67,7 @@ const SideBar = () => {
 
 	return (
 		<>
-			<aside className=' border-r  w-[10%]  flex flex-col items-center justify-between sticky  top-0 py-4'>
+			<aside className='pr-5 border-r  w-[15%]  flex flex-col items-end justify-between sticky  top-0 py-4'>
 				<menu className='flex flex-col items-center gap-3'>
 					<Twitter className='w-[40px] h-[40px]' />
 					{Links.map((link) => {
