@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = ({ navBackGround }: { navBackGround: boolean }) => {
 	const { pathname } = useLocation();
+	console.log(pathname);
 	const navigate = useNavigate();
 
 	const handleBackClick = () => {

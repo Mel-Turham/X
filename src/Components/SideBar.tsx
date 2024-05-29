@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { FaHashtag, FaBookmark, FaListAlt, FaUser } from 'react-icons/fa';
 import { IoMdNotifications } from 'react-icons/io';
 import { MdMessage, MdMoreHoriz } from 'react-icons/md';
-import { Avatar, Button, Tooltip} from '@nextui-org/react';
+import { Avatar, Button, Tooltip } from '@nextui-org/react';
 import { useState } from 'react';
 // import Logo from '../../src/assets/svg/Logo.svg';
 
@@ -13,7 +13,7 @@ import { useDisclosure } from '@nextui-org/react';
 import { FaFeatherPointed } from 'react-icons/fa6';
 const Links = [
 	{
-		path: '.',
+		path: '/',
 		label: 'Home',
 		icon: <AiFillHome className='w-6 h-6' />,
 	},
@@ -58,7 +58,6 @@ const SideBar = () => {
 	const { isOpen, onClose, onOpenChange, onOpen } = useDisclosure();
 
 	const handleMouseInter = (itemPath: string) => {
-		// console.log(itemPath);
 		setHoveredItem(itemPath);
 	};
 	const handleMouseLeave = () => {
@@ -117,7 +116,14 @@ const SideBar = () => {
 						</Button>
 					</Tooltip>
 				</menu>
-       <Avatar src='../../src/assets/images/users/profile_1.png'/>
+				<div>
+					<Avatar
+						size='lg'
+						isBordered={true}
+						color='primary'
+						src='../../src/assets/images/users/profile_1.png'
+					/>
+				</div>
 			</aside>
 			<ModalComponent
 				isOpen={isOpen}
