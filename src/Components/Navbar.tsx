@@ -5,7 +5,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = ({ navBackGround }: { navBackGround: boolean }) => {
 	const { pathname } = useLocation();
-	console.log(pathname);
 	const navigate = useNavigate();
 
 	const handleBackClick = () => {
@@ -22,18 +21,24 @@ const Navbar = ({ navBackGround }: { navBackGround: boolean }) => {
 			}`}
 		>
 			<div className='flex items-center justify-between py-1 w-full '>
-				<h2 className='font-bold text-[1.4rem] capitalize flex items-center gap-2'>
+				<h2 className='font-bold text-[1.2rem] capitalize flex items-center gap-2'>
 					{shouldShowBackArrow && (
-						<button aria-label='back button' onClick={handleBackClick}>
-							<BiArrowBack className='w-6 h-6' />
+						<button
+							aria-label='back button'
+							className='text-blue-400'
+							onClick={handleBackClick}
+						>
+							<BiArrowBack className='w-5 h-5' />
 						</button>
 					)}
 					{pathname === '/' ? ' Home' : pathname.slice(1)}
 				</h2>
 				{pathname.slice(1) === 'profile' ? (
-					<Button color='primary'>Follow</Button>
+					<Button color='primary' size='sm'>
+						Follow
+					</Button>
 				) : (
-					<BsStars className='w-6 h-6 text-blue-600' />
+					<BsStars className='w-5 h-5 text-blue-600' />
 				)}
 			</div>
 		</nav>

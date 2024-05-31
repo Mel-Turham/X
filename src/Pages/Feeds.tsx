@@ -75,73 +75,10 @@ const Feeds = () => {
 						</div>
 					</div>
 				</div>
-				<article className='px-6 mt-2 divide-y-1 flex flex-col gap-2'>
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
-					<CardPost />
+				<article className='px-6  divide-y-1 flex flex-col gap-2'>
+					{Array.from({ length: 200 }, (_, index) => {
+						return <CardPost key={index} />;
+					})}
 				</article>
 			</div>
 		</section>

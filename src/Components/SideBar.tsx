@@ -11,6 +11,7 @@ import { useState } from 'react';
 import ModalComponent from '../Components/Modal';
 import { useDisclosure } from '@nextui-org/react';
 import { FaFeatherPointed } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 const Links = [
 	{
 		path: '/',
@@ -116,14 +117,9 @@ const SideBar = () => {
 						</Button>
 					</Tooltip>
 				</menu>
-				<div>
-					<Avatar
-						size='lg'
-						isBordered={true}
-						color='primary'
-						src='../../src/assets/images/users/profile_1.png'
-					/>
-				</div>
+				<Link to='/profile' className='mr-2'>
+					<Avatar size='md' isBordered={true} color='primary' />
+				</Link>
 			</aside>
 			<ModalComponent
 				isOpen={isOpen}
