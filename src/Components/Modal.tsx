@@ -42,11 +42,7 @@ const ModalComponent = ({ onClose, isOpen, onOpenChange }: ModalProps) => {
 			<ModalContent>
 				<>
 					<ModalHeader className='flex items-center gap-5'>
-						<Avatar
-							isBordered
-							color='primary'
-							src='../../src/assets/svg/Logo.svg'
-						/>
+						<Avatar isBordered color='primary' />
 						<Dropdown>
 							<DropdownTrigger>
 								<Button
