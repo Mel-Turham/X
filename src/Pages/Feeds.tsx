@@ -76,7 +76,7 @@ const Feeds = () => {
 					</div>
 				</div>
 				<article className='px-6  divide-y-1 flex flex-col gap-2'>
-					{Array.from({ length: 200 }, (_, index) => {
+					{Array.from({ length: 100 }, (_, index) => {
 						return <CardPost key={index} />;
 					})}
 				</article>
