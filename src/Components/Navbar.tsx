@@ -16,7 +16,7 @@ const Navbar = ({ navBackGround }: { navBackGround: boolean }) => {
 		<nav
 			className={`w-full sticky top-0 left-0 z-50 py-2 px-6 ${
 				navBackGround
-					? ' backdrop-blur-md bg-white bg-opacity-30'
+					? ' backdrop-blur-lg bg-white bg-opacity-10'
 					: 'bg-transparent'
 			}`}
 		>
