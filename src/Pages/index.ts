@@ -6,6 +6,10 @@ import Messages from './Messages';
 import More from './More';
 import Notifications from './Notifications';
 import Profile from './Profile';
+import Likes from './Likes';
+import Media from './Media';
+import Tweets from './Tweets';
+import TweetsReplies from './TweetsReplies';
 
 export {
 	BookMarks,
@@ -16,4 +20,8 @@ export {
 	More,
 	Notifications,
 	Profile,
+	Likes,
+	Media,
+	Tweets,
+	TweetsReplies,
 };

@@ -16,42 +16,42 @@ const Links = [
 	{
 		path: '/',
 		label: 'Home',
-		icon: <AiFillHome className='w-6 h-6' />,
+		icon: <AiFillHome className='w-5 h-5' />,
 	},
 	{
 		path: 'explore',
 		label: 'Explore',
-		icon: <FaHashtag className='w-7 h-7' />,
+		icon: <FaHashtag className='w-5 h-5' />,
 	},
 	{
 		path: 'notifications',
 		label: 'Notifications',
-		icon: <IoMdNotifications className='w-6 h-6' />,
+		icon: <IoMdNotifications className='w-5 h-5' />,
 	},
 	{
 		path: 'messages',
 		label: 'Messages',
-		icon: <MdMessage className='w-6 h-6' />,
+		icon: <MdMessage className='w-5 h-5' />,
 	},
 	{
 		path: 'bookmarks',
 		label: 'Bookmarks',
-		icon: <FaBookmark className='w-6 h-6' />,
+		icon: <FaBookmark className='w-5 h-5' />,
 	},
 	{
 		path: 'lists',
 		label: 'Lists',
-		icon: <FaListAlt className='w-6 h-6' />,
+		icon: <FaListAlt className='w-5 h-5' />,
 	},
 	{
 		path: 'profile',
 		label: 'Profile',
-		icon: <FaUser className='w-6 h-6' />,
+		icon: <FaUser className='w-5 h-5' />,
 	},
 	{
 		path: 'more',
 		label: 'More',
-		icon: <MdMoreHoriz className='w-6 h-6' />,
+		icon: <MdMoreHoriz className='w-5 h-5' />,
 	},
 ];
 const SideBar = () => {
@@ -68,7 +68,7 @@ const SideBar = () => {
 	return (
 		<>
 			<aside className='pr-5 border-r  w-[15%]  flex flex-col items-end justify-between sticky  top-0 py-4'>
-				<menu className='flex flex-col items-center gap-3'>
+				<menu className='flex flex-col items-center gap-2'>
 					<Twitter className='w-[40px] h-[40px]' />
 					{Links.map((link) => {
 						return (

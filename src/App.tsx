@@ -5,12 +5,16 @@ import {
 	BookMarks,
 	Messages,
 	Explore,
-	Profile,
 	Lists,
 	More,
 	Notifications,
+	Likes,
+	TweetsReplies,
+	Media,
+	Tweets,
 } from './Pages/index';
 import { NextUIProvider } from '@nextui-org/react';
+import LayoutProfile from './Layouts/LayoutProfile';
 const App = () => {
 	const navigate = useNavigate();
 	return (
@@ -21,7 +25,12 @@ const App = () => {
 					<Route path='bookmarks' element={<BookMarks />} />
 					<Route path='messages' element={<Messages />} />
 					<Route path='explore' element={<Explore />} />
-					<Route path='Profile' element={<Profile />} />
+					<Route path='profile' element={<LayoutProfile />}>
+						<Route index element={<Tweets />} />
+						<Route path='likes' element={<Likes />} />
+						<Route path='media' element={<Media />} />
+						<Route path='tweetsReplies' element={<TweetsReplies />} />
+					</Route>
 					<Route path='lists' element={<Lists />} />
 					<Route path='more' element={<More />} />
 					<Route path='notifications' element={<Notifications />} />

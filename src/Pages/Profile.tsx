@@ -1,4 +1,4 @@
-import { Button, Image } from '@nextui-org/react';
+import { Button } from '@nextui-org/react';
 import { BiCalendar } from 'react-icons/bi';
 import { FaLocationDot } from 'react-icons/fa6';
 
@@ -6,11 +6,15 @@ const Profile = () => {
 	return (
 		<section>
 			<div className=' w-full relative min-h-[35vh] mt-1  bg-gradient-to-l from-blue-500 to-indigo-300'>
-				<figure className='overflow-hidden absolute h-[130px] w-[130px] -bottom-[50%] left-5 translate-y-[-40%] rounded-full bg-gradient-to-br from-blue-500 to-slate-300 shadow-md'>
-					<Image width={130} height={130} isLoading alt='profile-user' className='m-5' />
+				<figure className='overflow-hidden absolute h-[130px] w-[130px] -bottom-[50%] left-5 translate-y-[-40%] rounded-full bg-gradient-to-br from-blue-500 to-slate-300 shadow-md border-4 border-black/60 flex items-center justify-center'>
+					<img
+						alt='profile-user'
+						className='m-5 w-full h-full object-cover'
+						src='../../src/assets/images/users/profile_4.png'
+					/>
 				</figure>
 			</div>
-			<div className='px-5 bg-slate-50 w-full flex justify-between pt-4'>
+			<div className='px-5  w-full flex justify-between pt-4'>
 				<div className='h-full mt-10 w-1/2'>
 					<div className='ml-4 py-2'>
 						<div className='flex flex-col justify-center -space-y-1'>
