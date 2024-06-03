@@ -82,7 +82,9 @@ const ModalComponent = ({ onClose, isOpen, onOpenChange }: ModalProps) => {
 							variant='underlined'
 							placeholder='What is happening?!'
 							value={value}
-							onChange={(e) => setValue(e.target.value)}
+							onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+								setValue(e.target.value)
+							}
 						/>
 					</ModalBody>
 					<ModalFooter className='justify-between'>

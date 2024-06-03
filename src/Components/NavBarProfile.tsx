@@ -2,8 +2,8 @@ import { NavLink } from 'react-router-dom';
 
 const NavBarProfile = () => {
 	return (
-		<menu className='py-3'>
-			<ul className=' flex items-center justify-around'>
+		<menu className='py-0.5'>
+			<ul className=' flex items-center justify-between px-5'>
 				<NavLink
 					to='/profile'
 					end
