@@ -4,12 +4,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Link } from 'react-router-dom';
 import Twitter from '../icons/Twitter';
+import ErrorMessages from './ErrorMessages';
 
 const LoginSchema = z.object({
 	email: z.string().email('Invalid email. Email must be a valid email address'),
 	password: z
 		.string()
-		.min(3, 'Password must not be lesser than 3 characters')
+		.min(8, 'Password must not be lesser than 8 characters')
 		.max(16, 'Password must not be greater than 16 characters'),
 });
 
@@ -29,20 +30,23 @@ const Login = () => {
 		reset();
 	};
 	return (
-		<div className='bg-gradient-to-tr from-indigo-300 to-blue-400 flex items-center justify-center min-h-screen w-full max-sm:px-6 md:px-3 lg:px-0'>
-			<div className='max-w-[22rem] w-[100%] p-5 bg-slate-50 shadow-sm rounded-sm'>
-				<div className='flex items-center py-3 mb-2 '>
-					<Twitter className='w-[40px] justify-self-center mr-auto h-[40px]' />
-					<h1 className='text-[2rem] font-semibold'>Login</h1>
+		<div className='bg-gradient-to-tr from-indigo-200 to-blue-500  flex items-center justify-center min-h-screen w-full max-sm:px-6 md:px-3 lg:px-0'>
+			<div className='max-w-[25.5rem] w-[100%] px-5 py-2 bg-slate-50 shadow-sm rounded-sm'>
+				<div className='flex items-center flex-col py-1 mb-1 '>
+					<Twitter className='w-[40px]  h-[40px]' />
+					<h1 className='text-[1.8rem] self-start font-semibold'>Login</h1>
+					<p className='text-default-500'>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, quas.
+					</p>
 				</div>
-				<form className='space-y-3  w-full' onSubmit={handleSubmit(onSubmit)}>
+				<form className='space-y-2 w-full' onSubmit={handleSubmit(onSubmit)}>
 					<div className='max-w-[100%] flex flex-col items-start gap-1'>
 						<label className='text-default-500 font-semibold' htmlFor='email'>
 							Email
 						</label>
 						<div className='w-full'>
 							<input
-								className='w-full border-1.5 border-zinc-500 px-0.5'
+								className='w-full h-10 rounded-md text-[15px] font-semibold text-default-600 border-1.5 border-zinc-500 px-0.5'
 								type='email'
 								autoComplete='off'
 								id='email'
@@ -51,7 +55,7 @@ const Login = () => {
 						</div>
 						<p className='overflow-hidden'>
 							{errors?.email?.message && (
-								<span className='text-red-600'>{errors.email.message}</span>
+								<ErrorMessages message={errors.email.message} />
 							)}
 						</p>
 					</div>
@@ -64,7 +68,7 @@ const Login = () => {
 						</label>
 						<div className='w-full'>
 							<input
-								className='w-full border-1.5 border-zinc-500 px-0.5 block'
+								className='w-full h-10 rounded-md text-[15px] font-semibold text-default-600  border-1.5 border-zinc-500 px-0.5 block'
 								type='password'
 								autoComplete='off'
 								id='password'
@@ -73,7 +77,7 @@ const Login = () => {
 						</div>
 						<p className='overflow-hidden'>
 							{errors?.password?.message && (
-								<span className='text-red-500'>{errors.password.message}</span>
+								<ErrorMessages message={errors.password.message} />
 							)}
 						</p>
 					</div>
