@@ -1,13 +1,12 @@
 import Twitter from '../icons/Twitter';
 import { AiFillHome } from 'react-icons/ai';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { FaHashtag, FaBookmark, FaListAlt, FaUser } from 'react-icons/fa';
 import { IoMdNotifications } from 'react-icons/io';
 import { MdMessage, MdMoreHoriz } from 'react-icons/md';
 import { Avatar, Button, Tooltip } from '@nextui-org/react';
 import { useState } from 'react';
 // import Logo from '../../src/assets/svg/Logo.svg';
-
 import ModalComponent from '../Components/Modal';
 import { useDisclosure } from '@nextui-org/react';
 import { FaFeatherPointed } from 'react-icons/fa6';
@@ -57,6 +56,7 @@ const Links = [
 const SideBar = () => {
 	const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 	const { isOpen, onClose, onOpenChange, onOpen } = useDisclosure();
+	const { pathname } = useLocation();
 
 	const handleMouseInter = (itemPath: string) => {
 		setHoveredItem(itemPath);
@@ -112,6 +112,7 @@ const SideBar = () => {
 							variant='solid'
 							radius='full'
 							isIconOnly
+							isDisabled={pathname === '/' ? false : true}
 						>
 							<FaFeatherPointed />
 						</Button>
