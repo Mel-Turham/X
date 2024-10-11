@@ -4,11 +4,11 @@ import CardPost from '../Components/CardPost';
 const Tweets = () => {
 	return (
 		<section className='px-5 my-4'>
-			{Array.from({ length: 40 }, (_, index) => (
-				<>
+			{Array.from({ length: 10 }, (_, index) => (
+				<div key={index}>
 					<Divider className='my-5' />
-					<CardPost key={index} />
-				</>
+					<CardPost />
+				</div>
 			))}
 		</section>
 	);

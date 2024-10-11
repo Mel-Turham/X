@@ -6,6 +6,7 @@ import { MdOutlineGifBox } from 'react-icons/md';
 import { RiCalendarScheduleFill } from 'react-icons/ri';
 import { useValue } from '../Contexts/contextInput';
 import CardPost from '../Components/CardPost';
+import TweeterIcon from '../../src/assets/svg/Logo.svg';
 
 const Feeds = () => {
 	const { value, setValue } = useValue();
@@ -15,11 +16,7 @@ const Feeds = () => {
 			<div className=''>
 				<div className='flex flex-col gap-3'>
 					<div className='p-5 flex items-center gap-2 border-t border-b '>
-						<Avatar
-							size='sm'
-							color='primary'
-							src='../../src/assets/svg/Logo.svg'
-						/>
+						<Avatar size='sm' color='primary' src={TweeterIcon} />
 						<Input
 							fullWidth={false}
 							size='lg'
@@ -76,7 +73,7 @@ const Feeds = () => {
 					</div>
 				</div>
 				<article className='px-6  divide-y-1 flex flex-col gap-2'>
-					{Array.from({ length: 100 }, (_, index) => {
+					{Array.from({ length: 20 }, (_, index) => {
 						return <CardPost key={index} />;
 					})}
 				</article>

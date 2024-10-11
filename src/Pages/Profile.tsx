@@ -11,7 +11,7 @@ const Profile = () => {
 				<figure className='overflow-hidden absolute h-[130px] w-[130px] -bottom-[50%] left-5 translate-y-[-40%] rounded-full bg-gradient-to-br from-blue-500 to-slate-300 shadow-md border-4 border-black flex items-center justify-center'>
 					<img
 						alt='profile-user'
-						className='m-5 w-full h-full object-cover'
+						className='m-5 max-w-full aspect-square object-cover'
 						src={UserProfil}
 					/>
 				</figure>
