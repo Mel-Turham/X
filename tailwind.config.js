@@ -7,7 +7,11 @@ export default {
 		'./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
 	],
 	theme: {
-		extend: {},
+		extend: {
+			backgroundImage: {
+				bgUser: "url('./src/assets/images/posts/backgroundProfile.png')",
+			},
+		},
 	},
 	plugins: [nextui()],
 };
