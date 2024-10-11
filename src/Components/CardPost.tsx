@@ -12,6 +12,7 @@ import { FaRegComment } from 'react-icons/fa';
 import { AiOutlineRetweet } from 'react-icons/ai';
 import { IoIosHeartEmpty } from 'react-icons/io';
 import { MdSaveAlt } from 'react-icons/md';
+import PosteImgUrl from '../../src/assets/images/posts/post_image-1.png';
 
 const CardPost = () => {
 	return (
@@ -36,7 +37,7 @@ const CardPost = () => {
 					</p>
 				</CardHeader>
 				<CardBody className=' -mt-1'>
-					<Image className='object-cover w-full' src='../../src/assets/images/posts/post_image-1.png' />
+					<Image className='object-cover w-full' src={PosteImgUrl} />
 				</CardBody>
 				<CardFooter className='py-0 w-[400px] justify-between'>
 					<div className='flex flex-col items-center'>

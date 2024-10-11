@@ -1,4 +1,5 @@
 import { Button, Card, CardHeader, Divider, User } from '@nextui-org/react';
+import imageUrl from '../../src/assets/images/users/sbProfile_1.png';
 
 const CartItem = () => {
 	return (
@@ -11,7 +12,7 @@ const CartItem = () => {
 						name='Bessie Copper'
 						description={'@alessand'}
 						avatarProps={{
-							src: '../../src/assets/images/users/sbProfile_1.png',
+							src: imageUrl,
 							isBordered: true,
 							color: 'primary',
 						}}

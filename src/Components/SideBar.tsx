@@ -74,7 +74,7 @@ const SideBar = () => {
 						return (
 							<li
 								key={link.label}
-								className='flex   items-center justify-center  relative '
+								className='relative flex items-center justify-center '
 								onMouseEnter={() => handleMouseInter(link.path)}
 								onMouseLeave={handleMouseLeave}
 							>
